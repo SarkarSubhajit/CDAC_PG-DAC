@@ -27,13 +27,14 @@ class Account {
     public:
         Account();
         Account(const char* fnm, const char* lnm, long mb, const char* em);
-        ~Account();
+        virtual ~Account();
 
         // setters
         void setFname(const char* fnm);
         void setLname(const char* lnm);
         void setMobile(long mb);
         void setEmail(const char* em);
+        void setId(const char* idd);
         // getters
         const char* getFname();
         const char* getLname();
@@ -41,5 +42,5 @@ class Account {
         const char* getEmail();
         const char* getId();
         // display
-        void display();
+        virtual void display();
 };

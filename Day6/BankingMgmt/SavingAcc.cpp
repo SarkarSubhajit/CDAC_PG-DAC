@@ -32,5 +32,4 @@ void SavingAcc::display() {
     Account::display();
     cout << "Account Type : Savings" << endl;
     cout << "Cheque No. : " << cheque << endl;
-    cout << "-----------------------" << endl;
 }

@@ -3,7 +3,7 @@ interest rate = 4%
 minimum balance 20000
 chequebook number
 */
-
+#pragma once
 #include "Account.h"
 
 class SavingAcc: public Account {

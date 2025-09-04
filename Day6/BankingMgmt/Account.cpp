@@ -30,7 +30,7 @@ Account::Account(const char* fnm, const char* lnm, long mb, const char* em) {
     generateId();
 }
 
-Account::~Account(){
+Account::~Account() {
     delete[] fname;
     delete[] lname;
     delete[] email;
@@ -61,39 +61,42 @@ void Account::generateId() {
 }
 
 // SETTERS
-inline void Account::setFname(const char* fnm) {
+void Account::setFname(const char* fnm) {
     delete[] fname;
     fname = new char[strlen(fnm) + 1];
     strcpy(fname, fnm);
     generateId();
 }
-inline void Account::setLname(const char* lnm) {
+void Account::setLname(const char* lnm) {
     delete[] lname;
     lname = new char[strlen(lnm) + 1];
     strcpy(lname, lnm);
     generateId();
 }
-inline void Account::setMobile(long mb) {
+void Account::setMobile(long mb) {
     mobile = mb;
 }
-inline void Account::setEmail(const char* em) {
+void Account::setEmail(const char* em) {
     delete[] email;
     email = new char[strlen(em) + 1];
     strcpy(email, em);
 }
 
 // GETTERS
-inline const char* Account::getFname() {
+const char* Account::getFname() {
     return fname;
 }
-inline const char* Account::getLname() {
+const char* Account::getLname() {
     return lname;
 }
-inline long Account::getMobile() {
+long Account::getMobile() {
     return mobile;
 }
-inline const char* Account::getEmail() {
+const char* Account::getEmail() {
     return email;
+}
+const char* Account::getId() {
+    return id;
 }
 
 void Account::display() {

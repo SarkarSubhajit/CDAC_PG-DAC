@@ -11,7 +11,7 @@ CurrentAcc::CurrentAcc() {
     transaction = 0;
     update();
 }
-CurrentAcc::CurrentAcc(const char* fnm, const char* lnm, long mb, const char* em, double bal):Account(fnm, lnm, mb, em) {
+CurrentAcc::CurrentAcc(const char* fnm, const char* lnm, long mb, const char* em, long double bal):Account(fnm, lnm, mb, em) {
     avg_bal = bal;
     update();
 }
@@ -30,11 +30,11 @@ void CurrentAcc::update() {
         transaction = 50;
 }
 
-inline void CurrentAcc::setavgBal(double bal) {
+inline void CurrentAcc::setavgBal(long double bal) {
     avg_bal = bal;
     update();
 }
-double CurrentAcc::getavgBal() {
+inline long double CurrentAcc::getavgBal() {
     return avg_bal;
 }
 inline double CurrentAcc::getInterest() {
@@ -48,5 +48,5 @@ void CurrentAcc::display() {
     cout << "Account Type : Current" << endl;
     cout << "Average Annual Balance : " << avg_bal<< endl;
     cout << "Transaction limit/Day : " << transaction << endl;
-    cout << "-----------------------" << endl;
 }
+

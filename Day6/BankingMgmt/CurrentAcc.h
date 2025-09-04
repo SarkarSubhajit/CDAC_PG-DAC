@@ -3,23 +3,24 @@ interest rate = 1%
 minimum balance 1000
 transaction per day
 */
+#pragma once
 #include "Account.h"
 
 class CurrentAcc: public Account {
     private:
         static double interest;
         static int min_bal;
-        double avg_bal;
+        long double avg_bal;
         int transaction;
         void update();
 
     public:
         CurrentAcc();
-        CurrentAcc(const char* fnm, const char* lnm, long mb, const char* em, double bal);
+        CurrentAcc(const char* fnm, const char* lnm, long mb, const char* em, long double bal);
         ~CurrentAcc();
 
-        void setavgBal(double bal);
-        double getavgBal();
+        void setavgBal(long double bal);
+        long double getavgBal();
         int getTransaction();
         static double getInterest();
         static int getmin_Bal();
