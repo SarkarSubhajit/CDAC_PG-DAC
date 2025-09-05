@@ -3,7 +3,7 @@
 #include <cstring>
 using namespace std;
 
-char PhDStudent::phddegree[] = "PhD Degree Achieved";
+char PhDStudent::phddegree[] = "Ph.D. DEGREE ACHIEVED!!";
 PhDStudent::PhDStudent() {
     thesis = nullptr;
     thmarks = 0;
@@ -21,10 +21,13 @@ PhDStudent::~PhDStudent() {
 void PhDStudent::calculate() {
     int total = Student::getM1() + Student::getM2() + Student::getM3() + thmarks;
     if ((total/4) >= Student::getPassPercent()) {
-        cout << "Total % : " << (total/4) << "%" << endl;
+        cout << "TOTAL % : " << (total/4) << "%" << endl;
         cout << phddegree << endl;
     }
-        cout << "Failed" << endl;
+    else {
+        cout << "TOTAL %: " << (total/4) << "%" << endl;
+        cout << "FAILED!!" << endl;
+    }
 }
 
 void PhDStudent::setThesis(const char* th) {
@@ -45,7 +48,7 @@ int PhDStudent::getThMarks() {
 void PhDStudent::display()
 {
     Student::display();
-    cout << "Thesis Name: " << thesis;
-    cout << " Thesis Marks: " << thmarks << endl;
+    cout << "THESIS NAME: " << thesis;
+    cout << " THESIS MARKS: " << thmarks << endl;
     calculate();
 }

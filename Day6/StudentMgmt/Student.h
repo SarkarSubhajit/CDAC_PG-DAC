@@ -13,7 +13,7 @@ class Student
     public:
         Student();
         Student(int id, const char *nm, const char *addr, int m1, int m2, int m3);
-        ~Student();
+        virtual ~Student();
         // setter methods
         void setId(int id);
         void setName(const char *nm);
@@ -29,8 +29,7 @@ class Student
         int getM2();
         int getM3();
         static int getPassPercent();
-        void display();
-        // virtual void display();
+        virtual void display();
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-char MScStudent::mscdegree[] = "M.Sc Degree Achieved";
+char MScStudent::mscdegree[] = "M.Sc. DEGREE ACHIEVED!!";
 MScStudent::MScStudent() : spmarks(0), lnmarks(0) {
     // constructor
 }
@@ -18,11 +18,11 @@ MScStudent::~MScStudent() {
 void MScStudent::calculate() {
     int total = getM1() + getM2() + getM3() + spmarks + lnmarks;
     if ((total/5) >= Student::getPassPercent()) {
-        cout << "Total % : " << (total/4) << "%" << endl;
+        cout << "TOTAL %: " << (total/5) << "%" << endl;
         cout << mscdegree << endl;
     }
     else
-        cout << "Failed" << endl;
+        cout << "FAILED!!" << endl;
 }
 
 void MScStudent::setSpMarks(int spmarks) {
@@ -40,7 +40,7 @@ int MScStudent::getLnMarks() {
 
 void MScStudent::display() {
     Student::display();
-    cout << "Special Subject Marks: " << spmarks;
-    cout << " Language Marks: " << lnmarks << endl;
+    cout << "Special SUBJECT MARKS: " << spmarks;
+    cout << "LANGUAGE MARKS: " << lnmarks << endl;
     calculate();
 }

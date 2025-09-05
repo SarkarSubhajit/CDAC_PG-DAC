@@ -69,7 +69,8 @@ int Student::getPassPercent() { return passpercent;}
 
 void Student::display()
 {
-    cout << "StudentID : " << this->id << " Name: " << (name ? name : " Not found") << endl;
-    cout << " Address: " << addr << endl;
-    cout << " M1 : " << this->m1 << " M2 : " << this->m2 << " M3 : " << this->m3 << endl;
+    cout << "StudentID : " << this->id <<endl;
+    cout << "Name: " << (name ? name : " Not found") << endl;
+    cout << "Address: " << addr << endl;
+    cout << "M1 : " << this->m1 << "\tM2 : " << this->m2 << "\tM3 : " << this->m3 << endl;
 }
