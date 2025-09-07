@@ -1,0 +1,94 @@
+Linux Basic
+===========================================================================================================================
+
+1. How would you display the contents of a text file named "example.txt" in the terminal?
+
+=> Ans : 'cat example.txt'
+=> Explanation : 'cat' stands for concatenate. So rather than showing the file to the user what it does is reading the file from disk and sending it to the output stream.
+   We can use 'cat <filename> <filename> ...' like this to show multiple files back to back 
+
+
+2. What command would you use to list all files and directories in the current directory?
+
+=> Ans : 'ls' 
+=> Explanation : ls means list. 'ls -l' means long listing for more details of each file or directory.
+
+
+3. How can you create a new directory named "documents" in the current directory?
+
+=> Ans : 'mkdir documents'
+=> Explanation : mkdir means make directory
+
+
+4. What command would you use to copy a file named "file1.txt" from the current directory to another directory named "backup"?
+
+=> Ans : 'cp file1.txt backup/'
+=> Explanation : cp means copy, and we can use it to copy 1 or more files to destination directory.
+
+
+5. How would you navigate to the parent directory of the current directory?
+
+=> Ans : 'cd ..'
+=> Explanation : cd means change directory  and '.' stnds for current directory and '..' stands for parent directory.
+
+
+6. What command would you use to search for the word "apple" in a file named "fruits.txt"?
+
+=> Ans : 'grep apple fruits.txt'
+=> Explanation : grep command searches through the file and prints every line conataining the word 'apple'. Other variations of grep commands are 'grep -i ...' for case insensitive search, 'grep -c ...' for the number occurences of that word in the file, 'grep -n ...' for showing the line numbers as well.
+
+
+7. How can you recursively remove a directory named "old_files" along with all its contents?
+
+=> Ans : 'rm -r old_files'
+=> Explanation : just rmdir can only remove directories if it's empty
+
+
+8. What command would you use to find out the size of a file named "report.pdf" in kilobytes?
+
+=> Ans : 'du -k report.pdf'
+=> Explanation : du means disk usage. We can also use 'du -h ...' to directly see the size in redable format.
+
+
+9. How can you rename a file named "oldname.txt" to "newname.txt"?
+
+=> Ans : 'mv oldname.txt newname.txt'
+=> Explanation ; mv means move. when the source and destination are the same, mv command renames a file and when they are diffrent, it moves the file to destination directory from source. We can aslo change the name of a file in another directory by using absolute/relative path.
+
+
+10. What command would you use to display the last 10 lines of a file named "logfile.txt"?
+
+=> Ans : 'tail logfile.txt'
+=> Explanation : tail command by default shows last 10 lines of a file but we can see any number of lines we want by using it like this 'tail -n 50 logfile.txt'.
+
+
+11. How would you create a new user named "john" on the system?
+
+=> Ans : 'sudo useradd john'
+=> Explanation : useradd or adduser creates new user account. 'sudo useradd -m <username>' to create user with home directory
+
+
+12. What command would you use to set the password for the user "john"?
+
+=> Ans : 'sudo passwd john'
+=> Explanation : passwd stands for password
+
+
+13. How can you remove a user named "alice" from the system, along with their home directory and files?
+
+=> Ans : 'sudo userdel -r alice'
+=> Explanation : userdele means user dlete, -r indicates to do it recursively for every content inside
+
+
+14. What command would you use to grant read and write permissions to the owner, and only read permissions to the group and others, for a file named "data.txt"?
+
+=> Ans : 'chmod 644 data.txt'
+=> Explanation : read is 4, write is 2 and execute is 1. alternatively we can use 'chmod u=rw,g=r,o=r data.txt'
+
+
+15. How can you change the owner of a directory named "shared" to the user "bob" and the group "staff"?
+
+=> Ans : 'chown bob:staff shared'
+=> Explanation : chown means change owner. we can use 'chown -R bob:staff shared' to make these changes for every file inside shared as well.
+
+==========================================================================================================================
