@@ -1,0 +1,5 @@
+Type: BasicExtra: 50Total: 550
+Type: PremiumExtra: 2000Total: 2950
+Coupon Applied
+Type: PremiumExtra: 1500Total: 2500
+Type: BasicExtra: 0Total: 500
