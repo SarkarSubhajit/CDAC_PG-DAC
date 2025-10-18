@@ -32,7 +32,7 @@ int main() {
         ss >> choice >> usage;
 
         if (ss.fail() || usage < 0) {
-            fout << "Invaid Input" << endl;
+            fout << "Invalid Input" << endl;
             continue;
         }
 
