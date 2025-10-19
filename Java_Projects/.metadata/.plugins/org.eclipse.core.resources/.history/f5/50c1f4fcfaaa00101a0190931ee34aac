@@ -1,5 +1,0 @@
-package org.cdac;
-
-public class InvalidInputException extends Exception {
-
-}
