@@ -1,0 +1,25 @@
+package org.cdac;
+
+//import java.util.NoSuchElementException;
+
+public enum Department {
+
+	ENGINEER,
+	SALES,
+	MANAGER,
+	HR,
+	IT,
+	FINANCE,
+	MARKETING,
+	SCIENTIST;
+	
+//	private int choice;
+//	
+//	public Department fromMenu(int choice) throws NoSuchElementException {
+//		for (Department val : values()) {
+//			return val;
+//		}
+//		throw new NoSuchElementException();
+//	}
+	
+}

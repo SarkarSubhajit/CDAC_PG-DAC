@@ -1,0 +1,27 @@
+package org.cdac;
+
+import java.util.NoSuchElementException;
+
+public enum SubMenu {
+	
+	FIELD(1),
+	METHOD(2),
+	FINISH(3),
+	EXIT(4);
+	
+	private int choice;
+	
+	private SubMenu(int choice) {
+		this.choice = choice;
+	}
+	
+	public static SubMenu fromChoice(int choice) {
+		for (SubMenu val : values()) {
+			if (val.choice == choice)
+				return val;
+		}
+		throw new NoSuchElementException("Not Found");
+	}
+	
+	
+}

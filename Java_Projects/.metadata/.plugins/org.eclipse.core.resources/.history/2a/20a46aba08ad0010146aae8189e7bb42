@@ -1,0 +1,42 @@
+package DSA;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int num = 5;
+		Patterns pattern = new Patterns();
+		pattern.square(num);
+		System.out.println("==================================================");
+		pattern.rightAngledTriangle(num);
+		System.out.println("==================================================");
+		pattern.rightAngledNumberTriangle(num);
+		System.out.println("==================================================");
+		pattern.rightAngledRowsNumberTriangle(num);
+		System.out.println("==================================================");
+		pattern.invertedRightPyramid(num);
+		System.out.println("==================================================");
+		pattern.invertedRightNumerPyramid(num);
+		System.out.println("==================================================");
+		pattern.starPyramid(num);
+		System.out.println("==================================================");
+		pattern.invertedStarPyramid(num);
+		System.out.println("==================================================");
+		pattern.diamondStarPattern(num);
+		System.out.println("==================================================");
+		pattern.halfDiamondStarPattern(num);
+		System.out.println("==================================================");
+		pattern.binaryNumberTriangle(num);
+		System.out.println("==================================================");
+		pattern.numberCrownPattern(num);
+		System.out.println("==================================================");
+		pattern.increasingNumberTriangle(num);
+		System.out.println("==================================================");
+		System.out.println("==================================================");
+		System.out.println("==================================================");
+		
+		
+
+	}
+
+}

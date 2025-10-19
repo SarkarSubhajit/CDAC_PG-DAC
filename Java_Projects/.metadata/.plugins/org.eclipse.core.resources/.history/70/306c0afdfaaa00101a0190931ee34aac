@@ -1,0 +1,12 @@
+package org.cdac;
+
+public class InvalidInputException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1262082352783353592L;
+	
+	
+
+}

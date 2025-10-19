@@ -1,0 +1,10 @@
+package org.cdac;
+
+public enum Department {
+
+	ENGINEER,
+	SALES,
+	MANAGER,
+	SCIENTIST;
+	
+}

@@ -1,0 +1,16 @@
+package org.cdac;
+
+import java.time.LocalDate;
+
+public class Employee {
+
+	// employee id, emp name, dept enum, joining date (local date)
+	
+	String Id;
+	String name;
+	Department dept;
+	LocalDate joiningDate;
+	
+	
+	
+}

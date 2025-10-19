@@ -1,0 +1,22 @@
+package org.cdac;
+
+public class Entry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		Create a class Employee with members employee id, emp name, dept enum, joining date (local date) and perform following operations
+//		1 add employee
+//		2 display all employee
+//		3 display employee of specific dept
+//		4 display count of employees dept wise
+//		5 sort employees by joining date
+//		Save the data in file- Serialization and deserialization such that it resumes from where you had left
+//		Also add custom exceptions
+//		Use appropriate collections
+		
+		
+		
+	}
+
+}

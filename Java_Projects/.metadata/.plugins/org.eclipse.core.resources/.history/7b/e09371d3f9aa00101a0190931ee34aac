@@ -1,0 +1,11 @@
+package org.cdac;
+
+public class Employee {
+
+	// employee id, emp name, dept enum, joining date (local date)
+	
+	String Id;
+	String name;
+	Department dept;
+	
+}

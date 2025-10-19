@@ -1,0 +1,47 @@
+package org.cdac;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Employee {
+
+	// employee id, emp name, dept enum, joining date (local date)
+	
+	private int Id;
+	private String name;
+	private Department dept;
+	private LocalDate joiningDate;
+	
+	
+	// getter setter for all field [ ID can be generated only once ]
+	public int getId() {
+		return Id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Department getDept() {
+		return dept;
+	}
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+	public LocalDate getJoiningDate() {
+		return joiningDate;
+	}
+	public void setJoiningDate(LocalDate joiningDate) {
+		this.joiningDate = joiningDate;
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		return Integer.hashCode(Id);
+	}
+	
+	
+	
+}

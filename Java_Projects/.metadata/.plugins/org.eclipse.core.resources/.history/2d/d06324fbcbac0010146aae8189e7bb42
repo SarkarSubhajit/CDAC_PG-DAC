@@ -1,0 +1,12 @@
+package DSA;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Patterns pattern = new Patterns();
+		pattern.square();
+
+	}
+
+}

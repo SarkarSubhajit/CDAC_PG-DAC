@@ -1,0 +1,46 @@
+package org.cdac.utils;
+
+public class LinkedList<T> {
+	
+	T data;
+	
+	Node<T> start;
+	
+	Node<T> end;
+	
+	Node<T> current;
+	
+	int maxCount = 0;
+	
+	public void add(T data) {
+		
+		Node<T> tmpObj = new Node<>(data);
+		
+		if (start == null)
+			start = end = current = tmpObj;
+		else {
+			end.next = tmpObj;
+			tmpObj.previous = end;
+			end = tmpObj;
+		}
+		
+		maxCount++;
+	}
+	
+	public T getFirst() {
+		if (start == null)
+			return null;
+		else {
+			current = start;
+			return current.data;
+		}
+	}
+	
+	public T getNext() {
+		if (start == null)
+			return null;
+		else {
+			return current.next.data;
+		}
+	}
+}

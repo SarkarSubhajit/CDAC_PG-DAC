@@ -1,0 +1,42 @@
+package org.cdac;
+
+import java.util.Scanner;
+
+public class Entry {
+
+	public static void main(String[] args) {
+		
+		EmployeeManagement objEmp = new EmployeeManagement();
+		Scanner scanner = new Scanner(System.in);
+		
+		int choice;
+		do {
+			System.out.println("=============== MENU ===============");
+			System.out.println("1. Add Employee");
+			System.out.println("2. Display Employee");
+			System.out.println("3. Display Employee Department Wise");
+			System.out.println("4. Department Wise Count of Employee");
+			System.out.println("5. Sort Employee on Joining Date");
+			System.out.println("6. EXIT");
+			System.out.println("=============== MENU ===============");
+			System.out.println("Enter Your Choice");
+			choice = scanner.nextInt();
+			
+			switch(choice) {
+			case 1: objEmp.addEmployee(001, "Subhajit", "Engineer", "2025-01-24");
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+				
+			case 6: System.out.println("Exiting.."); break;
+			
+			default: System.out.println("Invalid Input"); break;
+			}
+		} while (choice != 6);
+		
+		
+		scanner.close();
+	}
+
+}

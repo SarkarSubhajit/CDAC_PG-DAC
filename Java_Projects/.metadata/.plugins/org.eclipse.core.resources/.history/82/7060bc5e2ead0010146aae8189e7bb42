@@ -1,0 +1,467 @@
+package DSA;
+
+public class Patterns {
+	
+//	* * * * * 
+//	* * * * * 
+//	* * * * * 
+//	* * * * * 
+//	* * * * * 
+	
+	public void square(int num) {
+		for (int rows = 0; rows < num; rows++) {
+			for (int cols = 0; cols < num; cols++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	* 
+//	* * 
+//	* * * 
+//	* * * * 
+//	* * * * * 
+	
+	public void rightAngledTriangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	1 
+//	1 2 
+//	1 2 3 
+//	1 2 3 4 
+//	1 2 3 4 5 
+	
+	public void rightAngledNumberTriangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print(cols + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	1 
+//	2 2 
+//	3 3 3 
+//	4 4 4 4 
+//	5 5 5 5 5 
+	
+	public void rightAngledRowsNumberTriangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print(rows + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	* * * * * 
+//	* * * * 
+//	* * * 
+//	* * 
+//	* 
+	
+	public void invertedRightPyramid(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = rows; cols <= num; cols++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	1 2 3 4 5 
+//	1 2 3 4 
+//	1 2 3 
+//	1 2 
+//	1 
+	
+	public void invertedRightNumerPyramid(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num-rows+1; cols++) {
+				System.out.print(cols + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//          * 
+//        * * * 
+//      * * * * * 
+//    * * * * * * * 
+//  * * * * * * * * * 
+	
+	public void starPyramid(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num-rows; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = 1; cols <= 2*rows-1; cols++) {
+				System.out.print("* ");
+			}
+			
+			System.out.println();
+		}
+	}
+	
+//	* * * * * * * * * 
+//	  * * * * * * * 
+//	    * * * * * 
+//	      * * * 
+//	        * 
+	
+	public void invertedStarPyramid(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols < rows; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = 1; cols <= 2*num - 2*rows+1; cols++) {
+				System.out.print("* ");
+			}
+			
+			System.out.println();
+		}
+	}
+	
+//          * 
+//        * * * 
+//      * * * * * 
+//    * * * * * * * 
+//  * * * * * * * * * 
+//  * * * * * * * * * 
+//    * * * * * * * 
+//      * * * * * 
+//        * * * 
+//          * 
+	
+	public void diamondStarPattern(int num) {
+		
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num-rows; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = 1; cols <= 2*rows-1; cols++) {
+				System.out.print("* ");
+			}
+			
+			System.out.println();
+		}
+		
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols < rows; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = 1; cols <= 2*num - 2*rows+1; cols++) {
+				System.out.print("* ");
+			}
+			
+			System.out.println();
+		}
+	}
+	
+//	* 
+//	* * 
+//	* * * 
+//	* * * * 
+//	* * * * * 
+//	* * * * 
+//	* * * 
+//	* * 
+//	* 
+	
+	public void halfDiamondStarPattern(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		
+		for (int rows = 1; rows <= num-1; rows++) {
+			for (int cols = rows; cols <= num-1; cols++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	1 
+//	0 1 
+//	1 0 1 
+//	0 1 0 1 
+//	1 0 1 0 1 
+	
+	public void binaryNumberTriangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				if ((cols%2 == 0 && rows%2==0) || (cols%2!=0 && rows%2!=0))
+					System.out.print("1 ");
+				else
+					System.out.print("0 ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	1                 1 
+//	1 2             2 1 
+//	1 2 3         3 2 1 
+//	1 2 3 4     4 3 2 1 
+//	1 2 3 4 5 5 4 3 2 1 
+	
+	public void numberCrownPattern(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print(cols + " ");
+			}
+			
+			for (int cols = 1; cols <= 2*(num-rows+1)-2; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = rows; cols >= 1; cols--) {
+				System.out.print(cols + " ");
+			}
+			
+			System.out.println();
+		}
+	}
+	
+//	1 
+//	2 3 
+//	4 5 6 
+//	7 8 9 10 
+//	11 12 13 14 15 
+	
+	public void increasingNumberTriangle(int num) {
+		int count = 1;
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print(count + " ");
+				count++;
+			}
+			System.out.println();
+		}
+	}
+	
+//	A 
+//	A B 
+//	A B C 
+//	A B C D 
+//	A B C D E 
+	
+	public void increasingLetterTriangle(int num) {
+		//char letter = 'A';
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print((char) (cols+64) + " ");
+				//letter++;
+			}
+			System.out.println();
+		}
+	}
+	
+//	A B C D E 
+//	A B C D 
+//	A B C 
+//	A B 
+//	A 
+	
+	public void reverseLetterTriangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num-rows+1; cols++) {
+				System.out.print((char) (cols+64) + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	A 
+//	B B 
+//	C C C 
+//	D D D D 
+//	E E E E E 
+	
+	public void alphaRampPattern(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= rows; cols++) {
+				System.out.print((char) (rows+64) + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//          A 
+//        A B A 
+//      A B C B A 
+//    A B C D C B A 
+//  A B C D E D C B A
+	
+	public void letterPyramid(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num-rows; cols++) {
+				System.out.print("  ");
+			}
+			
+			char letter = 'A';	
+			for ( int cols = 1; cols < 2*rows; cols++) {
+				if (cols <= rows-1) {
+					System.out.print(letter + " ");
+					letter++;
+				}
+				else {
+					System.out.print(letter + " ");
+					letter--;
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+//	E 
+//	D E 
+//	C D E 
+//	B C D E 
+//	A B C D E 
+	
+	public void alphaTrianglePattern(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = rows; cols >= 1; cols--) {
+				System.out.print((char) (num-cols+65) + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+//	* * * * * * * * * * 
+//	* * * *     * * * * 
+//	* * *         * * * 
+//	* *             * * 
+//	*                 * 
+//	*                 * 
+//	* *             * * 
+//	* * *         * * * 
+//	* * * *     * * * * 
+//	* * * * * * * * * * 
+	
+	public void symmetricVoidPattern(int num) {
+		
+		int spaces = 0;
+		
+		for (int rows = 1; rows <= 2*num; rows++) {
+			
+			int stars = (num >= rows) ? (num-rows+1) : (rows-num);
+			
+			for (int cols = 1; cols <= stars; cols++) {
+				System.out.print("* ");
+			}
+			
+			for (int cols = 1; cols <= spaces; cols++) {
+				System.out.print("  ");
+			}
+			
+			for (int cols = 1; cols <= stars; cols++) {
+				System.out.print("* ");
+			}
+			
+			if (num > rows)
+				spaces += 2; 
+			else if (num < rows)
+				spaces -= 2;
+			
+			System.out.println();
+		}
+		
+	}
+	
+//	*                 * 
+//	* *             * * 
+//	* * *         * * * 
+//	* * * *     * * * * 
+//	* * * * * * * * * * 
+//	* * * *     * * * * 
+//	* * *         * * * 
+//	* *             * * 
+//	*                 * 
+	
+	public void symmetricButterflyPattern(int num) {
+		
+		// initializing spaces at the first line
+		int spaces = 2*(num-1);
+		
+		for (int rows = 1; rows <= 2*num-1; rows++) {
+			
+			int stars = rows;
+			if (rows > num) stars = 2*num-rows;
+			
+			// stars in upper half
+			for (int cols = 1; cols <= stars; cols++) {
+				System.out.print("* ");
+			}
+			
+			// spaces
+			for (int cols = 1; cols <= spaces; cols++) {
+				System.out.print("  ");
+			}
+			
+			// stars in lower half
+			for (int cols = 1; cols <= stars; cols++) {
+				System.out.print("* ");
+			}
+			
+			spaces = (rows < num) ? (spaces - 2) : (spaces + 2);
+			System.out.println();
+			
+		}
+		
+	}
+	
+//	* * * * * 
+//	*       * 
+//	*       * 
+//	*       * 
+//	* * * * * 
+	
+	public void hollowRectangle(int num) {
+		for (int rows = 1; rows <= num; rows++) {
+			for (int cols = 1; cols <= num; cols++) {
+				if (rows == 1 || cols == 1 || cols == num || rows == num)
+					System.out.print("* ");
+				else
+					System.out.print("  ");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void theNumberPattern(int num) {
+		int size = 2*num-1;
+		for (int rows = 1; rows <= size; rows++) {
+			for (int cols = 1; cols <= size; cols++) {
+				
+				int top = rows;
+				int left = cols;
+				int bottom = size-rows-1;
+				int right = size-cols-1;
+				
+				int minDistance = Math.min(Math.min(top, bottom), Math.min(right, left));
+				
+				System.out.print((num-minDistance) + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+}

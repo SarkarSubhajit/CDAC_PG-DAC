@@ -1,0 +1,159 @@
+package org.cdac;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Entry {
+
+	static class FieldDetails {
+
+		String fieldName;
+		String fieldAccss;
+		String fieldType;
+
+		public FieldDetails(String fName, String fAccss, String fType) {
+			fieldName = fName;
+			fieldAccss = fAccss;
+			fieldType = fType;
+		}
+
+	}
+
+	static class MethodDetails {
+		String methodName;
+		String methodAccss;
+		String methodType;
+		String parameters;
+
+		public MethodDetails(String mName, String mAccss, String mType, String param) {
+			methodName = mName;
+			methodAccss = mAccss;
+			methodType = mType;
+			parameters = param;
+		}
+	}
+
+	public static void main(String[] args) {
+
+		try (Scanner scanner = new Scanner(System.in)) {
+
+			int choice;
+			String classAccss = "";
+			
+			System.out.println("Enter Package Name: ");
+			String packageName = scanner.nextLine();
+			
+			System.out.println("Enter Class Name: ");
+			String className = scanner.nextLine();
+
+			System.out.println("Choose Class type");
+			System.out.println("1. public");
+			System.out.println("2. private");
+			System.out.println("3. default");
+			choice = scanner.nextInt();
+			scanner.nextLine();
+			
+			Menu option = Menu.fromChoice(choice);
+
+			switch (option) {
+			case PUBLIC: classAccss = "public"; break;
+			case PRIVATE: classAccss = "private"; break;
+			case DEFAULT: classAccss = ""; break;
+			default: System.out.println("Invalid Input"); break;
+			}
+
+			ArrayList<FieldDetails> fields = new ArrayList<>();
+			ArrayList<MethodDetails> methods = new ArrayList<>();
+			
+			int menuChoice;
+			do {
+				
+				System.out.println("1. Add Field");
+				System.out.println("2. Add Method");
+				System.out.println("3. Finish");
+				System.out.println("Enter Your Choice");
+				menuChoice = scanner.nextInt();
+				scanner.nextLine();
+				
+			//	SubMenu menu = SubMenu.fromChoice(menuChoice);
+				SubMenu obj = SubMenu.valueOf("FIELD");
+				
+				switch(obj) {
+				case FIELD: {
+					System.out.print("Variable Type : ");
+					String type = scanner.nextLine();
+					
+					System.out.print("Variable Access Specifier (public / private / default) : ");
+					String accss = scanner.nextLine();
+					accss = (accss.equals("default") ? "" : accss );
+					
+					System.out.print("Variable Name : ");
+					String name = scanner.nextLine();
+					
+					fields.add(new FieldDetails(name, accss, type));
+				}
+				break;
+				case METHOD: {
+					System.out.print("Method Return Type : ");
+					String type = scanner.nextLine();
+					
+					System.out.print("Method Access Specifier (public / private / default) : ");
+					String accss = scanner.nextLine();
+					accss = (accss.equals("default") ? "" : accss );
+					
+					System.out.print("Method Parameters ( ',' seperated [e.g. int x, String y] : ");
+					String param = scanner.nextLine();
+					
+					System.out.print("Method Name : ");
+					String name = scanner.nextLine();
+					
+					methods.add(new MethodDetails(name, accss, type, param));
+				}
+				break;
+				case FINISH: {
+					generateClass(packageName, className, classAccss, fields, methods);
+				}
+				break;
+				default: System.out.println("Invalid Input"); break;
+				}
+				
+			} while (menuChoice != 4);
+		}
+
+	}
+	
+	public static void generateClass(String pkgName, String clsName, String clsAccss, ArrayList<FieldDetails> fields, ArrayList<MethodDetails> methods) {
+		try (PrintWriter writer  = new PrintWriter(new FileWriter(clsName + ".java"))) {
+			
+			writer.println("package " + pkgName + ";");
+			writer.println();
+			writer.println(clsAccss + " class " + clsName + " {");
+			writer.println();
+			
+			for (FieldDetails field : fields) {
+				writer.println("\t" + field.fieldAccss + " " + field.fieldType + " " + field.fieldName + ";");
+			}
+			writer.println();
+			
+			for (MethodDetails method : methods) {
+				writer.println("\t" + method.methodAccss + " " + method.methodType + " " + method.methodName + "(" + method.parameters + ") {");
+				writer.println("\t\t");
+				
+				if (method.methodType.equals("void"))
+					writer.println("\t\treturn;\n\t}");
+				else if (method.methodType.equals("int"))
+					writer.println("\t\treturn 0;\n\t}");
+				else
+					writer.println("\t\treturn null;\n\t}");
+			}
+			writer.println("}");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
